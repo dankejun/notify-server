@@ -15,27 +15,27 @@ const chalk = require('chalk') // 4.1.2以上版本不支持 CommonJS
 // # * * * * * *
 
 // 为了方便你进行测试，你可以把时间配置成这样，默认为1分钟运行一次
-// cron.schedule('* * * * *', () => {})
+cron.schedule('* * * * *', () => {})
 
 // 每天 7:30
-cron.schedule(
-  '30 7 * * *',
-  (now) => {
-    console.log(
-      chalk.greenBright('🕒 当前时间:'),
-      chalk.yellowBright(dayjs(now).format('YYYY-MM-DD HH:mm:ss'))
-    )
+// cron.schedule(
+//   '30 7 * * *',
+//   (now) => {
+//     console.log(
+//       chalk.greenBright('🕒 当前时间:'),
+//       chalk.yellowBright(dayjs(now).format('YYYY-MM-DD HH:mm:ss'))
+//     )
 
-    console.log(chalk.cyan('🎃 开始执行发送消息脚本...'))
-    exec('npm run start', (err, stdout) => {
-      if (err) {
-        console.log(chalk.red('❌ 发送消息脚本执行失败'))
-        console.log('err: ', err)
-      } else {
-        console.log(chalk.green('✅ 发送消息脚本执行成功'))
-        console.log('stdout: ', stdout)
-      }
-    })
-  },
-  { timezone: 'Asia/Shanghai' }
-)
+//     console.log(chalk.cyan('🎃 开始执行发送消息脚本...'))
+//     exec('npm run start', (err, stdout) => {
+//       if (err) {
+//         console.log(chalk.red('❌ 发送消息脚本执行失败'))
+//         console.log('err: ', err)
+//       } else {
+//         console.log(chalk.green('✅ 发送消息脚本执行成功'))
+//         console.log('stdout: ', stdout)
+//       }
+//     })
+//   },
+//   { timezone: 'Asia/Shanghai' }
+// )
